@@ -1,0 +1,24 @@
+.title_daily_table_2_1 {
+   border: 1px solid black;
+   width: 100%;
+   table-layout: fixed;
+}
+
+.title_daily_table_2_1 th {
+  
+    font-size: 12px;
+    border: 1px solid black;
+    text-align: center;
+    
+}
+
+.title_daily_table_2_1 td {
+    
+    font-size: 12px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.title_daily_table_2_1 tr {
+    height: 24px;
+}

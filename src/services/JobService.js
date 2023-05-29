@@ -41,7 +41,7 @@ const updateJob = async(data, CIF) => {
     var date = new Date();
     var year = date.getFullYear();
     var month = date.getMonth() + 1;
-    var day = date.getDate()+1;
+    var day = date.getDate();
     return year + "-" + month + "-" + day ;
 }
 var makeTime = function(){
@@ -52,6 +52,7 @@ var makeTime = function(){
   return hours + ":" + minutes + ":" + seconds ;
 }
 
+console.log('date',makeDate())
   try {
     const jobUpdate = await db.Jobs.findOne({
       where: {id:data.id}
@@ -59,7 +60,7 @@ var makeTime = function(){
     if(jobUpdate) {
       jobUpdate.statusJob = data.statusJob;
       jobUpdate.noteJob = data.noteJob;
-      jobUpdate.timelineJob = makeDate();
+      jobUpdate.timelineJob = dayjs(new Date()).format("YYYY-MM-DD");
       jobUpdate.timeline_Job = makeTime();
       await jobUpdate.save()
       console.log('save succes')

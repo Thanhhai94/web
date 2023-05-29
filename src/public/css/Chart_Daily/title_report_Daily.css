@@ -1,0 +1,11 @@
+.title_report_Daily .col-7 {
+    text-align: center;
+}
+.title_report_Daily .col-2 p {
+    float: right;
+    font-weight: 500;
+}
+
+.title_report_Daily .col-1 input {
+    text-align: center;
+}

@@ -37,10 +37,16 @@
             dealineJobElement[i].innerHTML = makeDate(datevalue)
         }
 
-        const timelineJobElement = document.getElementsByClassName("timelineJob")        
+        const timelineJobElement = document.getElementsByClassName("timelineJob") 
+        console.log((timelineJobElement[0].innerHTML)? 'ok':'nook')       
         for(let i = 0 ; i < timelineJobElement.length; i++) {
-            const datevalue = new Date(timelineJobElement[i].innerHTML.toString())
-            timelineJobElement[i].innerHTML = makeDate(datevalue)
+            
+            if(timelineJobElement[i].innerHTML){
+                return timelineJobElement[i].innerHTML = makeDate(new Date(timelineJobElement[i].innerHTML.toString()))
+            } else {
+                return timelineJobElement[i].innerHTML = "__"
+            }
+            
         }
 
     </script>

@@ -66,8 +66,8 @@ const post_QM_TD_BINHQUAN = async(req,res) => {
         }    
     } )
     
-    let input_data_BC = data_BC.map(value => parseInt(value.toFixed(0)))
-    let input_data_SS = data_SS.map(value => parseInt(value.toFixed(0)))
+    let input_data_BC = data_BC.map(value => parseInt(value))
+    let input_data_SS = data_SS.map(value => parseInt(value))
     //end
 
 
