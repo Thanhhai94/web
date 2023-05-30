@@ -22,3 +22,10 @@
 .title_daily_table_2_1 tr {
     height: 24px;
 }
+
+.red{
+    color: red;
+}
+.green {
+    color: rgb(6, 104, 6);
+}

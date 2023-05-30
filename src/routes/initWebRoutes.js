@@ -4,7 +4,7 @@ import userController from "../controller/userController";
 import jobController from "../controller/jobController";
 import QM_TD_BINHQUAN_Monthly_Controller from '../controller/QM_TD_BINHQUAN_Monthly_Controller'
 import reportMonthly from '../controller/reportMonthly'
-import reportDaily from '../controller/reportDaily'
+import reportDailyController from '../controller/reportDailyController'
 import test from '../controller/test'
 
 
@@ -25,7 +25,8 @@ const initWebRoutes = (app) => {
   router.get("/DScongviec/:slug_id",jobController.getDetailJob)
   router.post("/DScongviec/:slug_id",jobController.updateDetailJob)
   
-  router.get("/daily",reportDaily.reportDailyTable)
+  router.get("/daily",reportDailyController.reportDailyTable)
+  router.get("/daily/:date",reportDailyController.reportDailyTableSelect)
 
   router.get("/monthly", reportMonthly.reportMonthly)
   router.get("/monthly/tindung", QM_TD_BINHQUAN_Monthly_Controller.getAll_QM_TD_BINHQUAN)

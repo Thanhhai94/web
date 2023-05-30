@@ -6,6 +6,29 @@ import dayjs from "dayjs";
 const getAll_QM_TD_BINHQUAN = async(req,res) => {
     let CIF = req.session.CIF
     let staff = await staffServices.getStaffInfo(CIF)
+
+    // Tao mảng là các ngày cuối tháng từ tháng 12 năm trước
+    var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+    var last_12 = dayjs(new Date(y-1,12,0,7,0,0)).format("YYYY-MM-DD").toString().replaceAll('-','')
+    const month = [last_12]
+    for(let i=1; i<m+1;i++){
+        month.push(dayjs(new Date(y,i,0,7,0,0)).format("YYYY-MM-DD").toString().replaceAll('-',''))
+    }
+    console.log(month)
+    
+    let table_LS_CV_BINHQUAN_TT = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'TOAN_HANG')
+    let table_LS_CV_BINHQUAN_TT_KHCN = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'KHCN')
+    let table_LS_CV_BINHQUAN_TT_KHDN = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'KHDN')
+    let table_LS_CV_BINHQUAN_TT_KHDNL = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'KHDNL')
+    let input_LS_CV_BQ_TT = table_LS_CV_BINHQUAN_TT.map(value =>(+value.AMT_LS_CV_BQ.toFixed(2)))
+    let input_LS_CV_BQ_TT_KHCN = table_LS_CV_BINHQUAN_TT_KHCN.map(value =>(+value.AMT_LS_CV_BQ.toFixed(2)))
+    let input_LS_CV_BQ_TT_KHDN = table_LS_CV_BINHQUAN_TT_KHDN.map(value =>(+value.AMT_LS_CV_BQ.toFixed(2)))
+    let input_LS_CV_BQ_TT_KHDNL = table_LS_CV_BINHQUAN_TT_KHDNL.map(value =>(+value.AMT_LS_CV_BQ.toFixed(2)))
+
+
+    let inputMonth = month.map(value => +value)
+    //end
+
     return res.render('test',{
         staff:staff,
         ky_bao_cao: (req.session.ky_bao_cao)?(req.session.ky_bao_cao):'',
@@ -13,11 +36,11 @@ const getAll_QM_TD_BINHQUAN = async(req,res) => {
         data_ky_bao_cao: [],
         data_ky_so_sanh: [],
         pageTitle: 'Báo cáo tháng',
-        data_LS_CV_BQ_TT: [],
-        data_LS_CV_BQ_TT_KHCN: [],
-        data_LS_CV_BQ_TT_KHDN: [],
-        data_LS_CV_BQ_TT_KHDNL: [],
-        inputMonth: []
+        data_LS_CV_BQ_TT: JSON.stringify(input_LS_CV_BQ_TT),
+        data_LS_CV_BQ_TT_KHCN: JSON.stringify(input_LS_CV_BQ_TT_KHCN),
+        data_LS_CV_BQ_TT_KHDN: JSON.stringify(input_LS_CV_BQ_TT_KHDN),
+        data_LS_CV_BQ_TT_KHDNL: JSON.stringify(input_LS_CV_BQ_TT_KHDNL),
+        inputMonth: JSON.stringify(month),
     })
 }
 
@@ -74,17 +97,17 @@ const post_QM_TD_BINHQUAN = async(req,res) => {
     // LS_CV_BINHQUAN_TT
 
     // Tao mảng là các ngày cuối tháng từ tháng 12 năm trước
-    var date = new Date(req.body.ky_bao_cao), y = date.getFullYear(), m = date.getMonth()+1;
-    var last_12 = dayjs(new Date(y-1,12,0,7,0,0)).format("YYYY-MM-DD").toString().replaceAll('-','')
+    let date = new Date(req.body.ky_bao_cao), y = date.getFullYear(), m = date.getMonth()+1;
+    let last_12 = dayjs(new Date(y-1,12,0,7,0,0)).format("YYYY-MM-DD").toString().replaceAll('-','')
     const month = [last_12]
     for(let i=1; i<m+1;i++){
         month.push(dayjs(new Date(y,i,0,7,0,0)).format("YYYY-MM-DD").toString().replaceAll('-',''))
     }
     
-    var table_LS_CV_BINHQUAN_TT = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'TOAN_HANG')
-    var table_LS_CV_BINHQUAN_TT_KHCN = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'KHCN')
-    var table_LS_CV_BINHQUAN_TT_KHDN = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'KHDN')
-    var table_LS_CV_BINHQUAN_TT_KHDNL = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'KHDNL')
+    let table_LS_CV_BINHQUAN_TT = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'TOAN_HANG')
+    let table_LS_CV_BINHQUAN_TT_KHCN = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'KHCN')
+    let table_LS_CV_BINHQUAN_TT_KHDN = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'KHDN')
+    let table_LS_CV_BINHQUAN_TT_KHDNL = await monthly_Services.get_LS_CV_BINHQUAN_TT(month,'KHDNL')
     let input_LS_CV_BQ_TT = table_LS_CV_BINHQUAN_TT.map(value =>(+value.AMT_LS_CV_BQ.toFixed(2)))
     let input_LS_CV_BQ_TT_KHCN = table_LS_CV_BINHQUAN_TT_KHCN.map(value =>(+value.AMT_LS_CV_BQ.toFixed(2)))
     let input_LS_CV_BQ_TT_KHDN = table_LS_CV_BINHQUAN_TT_KHDN.map(value =>(+value.AMT_LS_CV_BQ.toFixed(2)))
@@ -92,12 +115,6 @@ const post_QM_TD_BINHQUAN = async(req,res) => {
 
 
     let inputMonth = month.map(value => +value)
-    console.log(inputMonth)
-    console.log('1',input_LS_CV_BQ_TT)
-    console.log('2',input_LS_CV_BQ_TT_KHCN)
-    console.log('3',input_LS_CV_BQ_TT_KHDN)
-    console.log('4',input_LS_CV_BQ_TT_KHDNL)
-
     //end
 
     //Render

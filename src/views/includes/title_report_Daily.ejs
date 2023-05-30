@@ -6,7 +6,7 @@
         <p>Ngày báo cáo</p>
     </div>
     <div class="col-1">
-        <input  name="bao_cao_ngay" value=`${new Date()}` type="date" />
+        <input  name="bao_cao_ngay" value="<%=date %>" type="date" />
     </div>
 </div>
 
@@ -15,8 +15,8 @@
         $('input[name="bao_cao_ngay"]').change(function(){
            console.log($(this).val())
            let date = $(this).val()
-           let param = date.replaceAll('-','')
-           window.location.href = `/daily/${param}`
+        //    let param = date.replaceAll('-','')
+           window.location.href = `/daily/${date}`
         })
     })
 </script>
