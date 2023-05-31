@@ -1,4 +1,5 @@
 import db from "../models/index"
+const { Op } = require("sequelize")
 
 const getDataHDVDaily = async(Rptdate,KHOI_QL,NHOM_KH,CHI_TIEU) => {
     try {
@@ -14,16 +15,16 @@ const getDataHDVDaily = async(Rptdate,KHOI_QL,NHOM_KH,CHI_TIEU) => {
             return KQ
         } else {
             return [{
-                id:1000000,
+                
                 Rptdate: Rptdate,
                 KHOI_QL: KHOI_QL,
                 NHOM_KH: NHOM_KH,
                 CHI_TIEU: CHI_TIEU,
-                Amt: '/',
-                Dtd: '/',
-                Mtd: '/',
-                Ytd: '/',
-                Ty_trong:'/'
+                Amt: '',
+                Dtd: '',
+                Mtd: '',
+                Ytd: '',
+                Ty_trong:''
             }]
         }
         
@@ -32,6 +33,139 @@ const getDataHDVDaily = async(Rptdate,KHOI_QL,NHOM_KH,CHI_TIEU) => {
     }
 }
 
+const getDataTDDaily = async(Rptdate,KHOI_QL,KY_HAN,NHOM_KH,CHI_TIEU) => {
+    try {
+        const KQ = await db.DAILYREPORT_TD.findAll({
+            where: {
+                Rptdate: Rptdate,
+                KHOI_QL: KHOI_QL,
+                KY_HAN: KY_HAN,
+                NHOM_KH: NHOM_KH,
+                CHI_TIEU: CHI_TIEU
+            }
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+                Rptdate: Rptdate,
+                KHOI_QL: KHOI_QL,
+                KY_HAN: KY_HAN,
+                NHOM_KH: NHOM_KH,
+                CHI_TIEU: CHI_TIEU,
+                Amt: '',
+                Dtd: '',
+                Mtd: '',
+                Ytd: '',
+            }]
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getCustomerTDDailyCNTang = async(Rptdate) => {
+    try {
+        const KQ = await db.Report_TD_Customer_Daily.findAll({
+            where: {
+                Rptdate: Rptdate,
+                NOTE: 'PS_TANG',
+                KHOI_QL: 'KHCN',
+            },
+            order: [['DIFF', 'DESC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+const getCustomerTDDailyCNGiam = async(Rptdate) => {
+    try {
+        const KQ = await db.Report_TD_Customer_Daily.findAll({
+            where: {
+                Rptdate: Rptdate,
+                NOTE: 'PS_GIAM',
+                KHOI_QL: 'KHCN',
+            },
+            order: [['DIFF', 'ASC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getCustomerTDDailyTCDNTang = async(Rptdate) => {
+    try {
+        const KQ = await db.Report_TD_Customer_Daily.findAll({
+            where: {
+                Rptdate: Rptdate,
+                NOTE: 'PS_TANG',
+                KHOI_QL: {
+                    [Op.in]: ['KHDN','KHDNL']
+                  }
+            },
+            order: [['DIFF', 'DESC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getCustomerTDDailyTCDNGiam = async(Rptdate) => {
+    try {
+        const KQ = await db.Report_TD_Customer_Daily.findAll({
+            where: {
+                Rptdate: Rptdate,
+                NOTE: 'PS_GIAM',
+                KHOI_QL: {
+                    [Op.in]: ['KHDN','KHDNL']
+                  }
+            },
+            order: [['DIFF', 'ASC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
+
 module.exports = {
-    getDataHDVDaily: getDataHDVDaily
+    getDataHDVDaily: getDataHDVDaily,
+    getDataTDDaily: getDataTDDaily,
+    getCustomerTDDailyCNTang: getCustomerTDDailyCNTang,
+    getCustomerTDDailyCNGiam: getCustomerTDDailyCNGiam,
+    getCustomerTDDailyTCDNTang: getCustomerTDDailyTCDNTang,
+    getCustomerTDDailyTCDNGiam:getCustomerTDDailyTCDNGiam
 }

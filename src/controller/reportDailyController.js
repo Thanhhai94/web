@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import dailyServices from "../services/dailyService"
 
 const reportDailyTable = async (req,res) => {
-    
+    let titles = ['QUY MÔ HĐV','LÃI SUẤT HĐV','BIÊN ĐỘ CỘNG','%CASA', 'QUY MÔ TD', 'LÃI SUẤT TD']
     let CIF = req.session.CIF
     let staff = await staffServices.getStaffInfo(CIF)
     let date = dayjs(new Date()).format("YYYY-MM-DD")
@@ -57,6 +57,7 @@ const reportDailyTable = async (req,res) => {
     let LAI_SUAT_CKH_KHDNL_Non_PVN= await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','Non-PVN','LAI_SUAT_CKH')
 
     //BIEN_DO_CONG
+    let BIEN_DO_CONG_TOANHANG_TOANHANG = await dailyServices.getDataHDVDaily(Rptdate,'TOAN_HANG','TOAN_HANG','BIEN_DO_CONG')
     let BIEN_DO_CONG_KHCN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','TONG_KHOI','BIEN_DO_CONG')
     let BIEN_DO_CONG_KHCN_6M = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','1. <6M','BIEN_DO_CONG')
     let BIEN_DO_CONG_KHCN_6M9M = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','2. 6-<9M','BIEN_DO_CONG')
@@ -70,6 +71,7 @@ const reportDailyTable = async (req,res) => {
     let BIEN_DO_CONG_KHDNL_Non_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','Non-PVN','BIEN_DO_CONG')
 
     //SO_DU_BIEN_DO_CONG
+    let SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG = await dailyServices.getDataHDVDaily(Rptdate,'TOAN_HANG','TOAN_HANG','SO_DU_BIEN_DO_CONG')
     let SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','TONG_KHOI','SO_DU_BIEN_DO_CONG')
     let SO_DU_BIEN_DO_CONG_KHCN_6M = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','1. <6M','SO_DU_BIEN_DO_CONG')
     let SO_DU_BIEN_DO_CONG_KHCN_6M9M = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','2. 6-<9M','SO_DU_BIEN_DO_CONG')
@@ -82,9 +84,69 @@ const reportDailyTable = async (req,res) => {
     let SO_DU_BIEN_DO_CONG_KHDNL_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','PVN','SO_DU_BIEN_DO_CONG')
     let SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','Non-PVN','SO_DU_BIEN_DO_CONG')
 
+    //TY_TRONG_CASA
+    let TY_TRONG_CASA_TOANHANG_TOANHANG = await dailyServices.getDataHDVDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHCN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','TONG_KHOI','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','TONG_KHOI','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDN_Core = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','Core','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDN_Upper = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','Upper','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDNL_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','TONG_KHOI','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDNL_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','PVN','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDNL_Non_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','Non-PVN','TY_TRONG_CASA')
+
+    //QUY_MO_TIN_DUNG_DH
+    let QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','QUY_MO_TIN_DUNG')
+
+    //QUY_MO_TIN_DUNG_TDH
+    let QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','QUY_MO_TIN_DUNG')
+
+    //LAI_SUAT_TIN_DUNG_DH
+    let LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','LAI_SUAT_TIN_DUNG')
+    
+    //LAI_SUAT_TIN_DUNG_TDH
+    let LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','LAI_SUAT_TIN_DUNG')
+    
+
+    //Customer
+    let TOP_CANHAN_TANG = await dailyServices.getCustomerTDDailyCNTang(Rptdate)
+    let TOP_CANHAN_GIAM = await dailyServices.getCustomerTDDailyCNGiam(Rptdate)
+    let TOP_DOANHNGHIEP_TANG = await dailyServices.getCustomerTDDailyTCDNTang(Rptdate)
+    let TOP_DOANHNGHIEP_GIAM = await dailyServices.getCustomerTDDailyTCDNGiam(Rptdate)
+    
+    
+
+
 
     return res.render('report_daily_table',{
+        
         pageTitle: 'Báo cáo ngày',
+        titles: titles,
         staff:staff,
         date: date,
         QUY_MO_KKH_TOANHANG_TOANHANG :  QUY_MO_KKH_TOANHANG_TOANHANG,    
@@ -129,6 +191,7 @@ const reportDailyTable = async (req,res) => {
         LAI_SUAT_CKH_KHDNL_PVN :  LAI_SUAT_CKH_KHDNL_PVN,
         LAI_SUAT_CKH_KHDNL_Non_PVN :  LAI_SUAT_CKH_KHDNL_Non_PVN,
 
+        BIEN_DO_CONG_TOANHANG_TOANHANG: BIEN_DO_CONG_TOANHANG_TOANHANG,
         BIEN_DO_CONG_KHCN_TONGKHOI:BIEN_DO_CONG_KHCN_TONGKHOI,
         BIEN_DO_CONG_KHCN_6M:BIEN_DO_CONG_KHCN_6M,
         BIEN_DO_CONG_KHCN_6M9M: BIEN_DO_CONG_KHCN_6M9M,
@@ -140,6 +203,8 @@ const reportDailyTable = async (req,res) => {
         BIEN_DO_CONG_KHDNL_TONGKHOI : BIEN_DO_CONG_KHDNL_TONGKHOI,
         BIEN_DO_CONG_KHDNL_PVN : BIEN_DO_CONG_KHDNL_PVN,
         BIEN_DO_CONG_KHDNL_Non_PVN : BIEN_DO_CONG_KHDNL_Non_PVN,
+
+        SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG:SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG,
         SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI : SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI,
         SO_DU_BIEN_DO_CONG_KHCN_6M : SO_DU_BIEN_DO_CONG_KHCN_6M,
         SO_DU_BIEN_DO_CONG_KHCN_6M9M : SO_DU_BIEN_DO_CONG_KHCN_6M9M,
@@ -150,12 +215,60 @@ const reportDailyTable = async (req,res) => {
         SO_DU_BIEN_DO_CONG_KHDN_Upper : SO_DU_BIEN_DO_CONG_KHDN_Upper,
         SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI : SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI,
         SO_DU_BIEN_DO_CONG_KHDNL_PVN : SO_DU_BIEN_DO_CONG_KHDNL_PVN,
-        SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN : SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN
+        SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN : SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN,
+
+        TY_TRONG_CASA_TOANHANG_TOANHANG : TY_TRONG_CASA_TOANHANG_TOANHANG,
+        TY_TRONG_CASA_KHCN_TONGKHOI : TY_TRONG_CASA_KHCN_TONGKHOI,
+        TY_TRONG_CASA_KHDN_TONGKHOI : TY_TRONG_CASA_KHDN_TONGKHOI,
+        TY_TRONG_CASA_KHDN_Core : TY_TRONG_CASA_KHDN_Core,
+        TY_TRONG_CASA_KHDN_Upper : TY_TRONG_CASA_KHDN_Upper,
+        TY_TRONG_CASA_KHDNL_TONGKHOI : TY_TRONG_CASA_KHDNL_TONGKHOI,
+        TY_TRONG_CASA_KHDNL_PVN : TY_TRONG_CASA_KHDNL_PVN,
+        TY_TRONG_CASA_KHDNL_Non_PVN : TY_TRONG_CASA_KHDNL_Non_PVN,
+
+        QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG,
+        QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG,
+        QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDN_NH_Core : QUY_MO_TIN_DUNG_KHDN_NH_Core,
+        QUY_MO_TIN_DUNG_KHDN_NH_Upper : QUY_MO_TIN_DUNG_KHDN_NH_Upper,
+        QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN : QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN,
+
+        QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG,
+        QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDN_TDH_Core : QUY_MO_TIN_DUNG_KHDN_TDH_Core,
+        QUY_MO_TIN_DUNG_KHDN_TDH_Upper : QUY_MO_TIN_DUNG_KHDN_TDH_Upper,
+        QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN : QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN,
+
+        LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG,
+        LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG,
+        LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDN_NH_Core : LAI_SUAT_TIN_DUNG_KHDN_NH_Core,
+        LAI_SUAT_TIN_DUNG_KHDN_NH_Upper : LAI_SUAT_TIN_DUNG_KHDN_NH_Upper,
+        LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN : LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN,
+
+        LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG,
+        LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_Core : LAI_SUAT_TIN_DUNG_KHDN_TDH_Core,
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper : LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper,
+        LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN : LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN,
         
+        TOP_CANHAN_TANG:TOP_CANHAN_TANG,
+        TOP_CANHAN_GIAM: TOP_CANHAN_GIAM,
+        TOP_DOANHNGHIEP_TANG : TOP_DOANHNGHIEP_TANG,
+        TOP_DOANHNGHIEP_GIAM : TOP_DOANHNGHIEP_GIAM,
     })
 }
 
 const reportDailyTableSelect = async (req,res) => {
+    let titles = ['QUY MÔ HĐV','LÃI SUẤT HĐV','BIÊN ĐỘ CỘNG','%CASA', 'QUY MÔ TD', 'LÃI SUẤT TD']
     let CIF = req.session.CIF
     let staff = await staffServices.getStaffInfo(CIF)
     let date = req.params.date
@@ -210,6 +323,7 @@ const reportDailyTableSelect = async (req,res) => {
     let LAI_SUAT_CKH_KHDNL_Non_PVN= await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','Non-PVN','LAI_SUAT_CKH')
 
     //BIEN_DO_CONG
+    let BIEN_DO_CONG_TOANHANG_TOANHANG = await dailyServices.getDataHDVDaily(Rptdate,'TOAN_HANG','TOAN_HANG','BIEN_DO_CONG')
     let BIEN_DO_CONG_KHCN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','TONG_KHOI','BIEN_DO_CONG')
     let BIEN_DO_CONG_KHCN_6M = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','1. <6M','BIEN_DO_CONG')
     let BIEN_DO_CONG_KHCN_6M9M = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','2. 6-<9M','BIEN_DO_CONG')
@@ -223,6 +337,7 @@ const reportDailyTableSelect = async (req,res) => {
     let BIEN_DO_CONG_KHDNL_Non_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','Non-PVN','BIEN_DO_CONG')
 
     //SO_DU_BIEN_DO_CONG
+    let SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG = await dailyServices.getDataHDVDaily(Rptdate,'TOAN_HANG','TOAN_HANG','SO_DU_BIEN_DO_CONG')
     let SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','TONG_KHOI','SO_DU_BIEN_DO_CONG')
     let SO_DU_BIEN_DO_CONG_KHCN_6M = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','1. <6M','SO_DU_BIEN_DO_CONG')
     let SO_DU_BIEN_DO_CONG_KHCN_6M9M = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','2. 6-<9M','SO_DU_BIEN_DO_CONG')
@@ -235,10 +350,66 @@ const reportDailyTableSelect = async (req,res) => {
     let SO_DU_BIEN_DO_CONG_KHDNL_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','PVN','SO_DU_BIEN_DO_CONG')
     let SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','Non-PVN','SO_DU_BIEN_DO_CONG')
 
+    //TY_TRONG_CASA
+    let TY_TRONG_CASA_TOANHANG_TOANHANG = await dailyServices.getDataHDVDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHCN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHCN','TONG_KHOI','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDN_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','TONG_KHOI','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDN_Core = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','Core','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDN_Upper = await dailyServices.getDataHDVDaily(Rptdate,'KHDN','Upper','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDNL_TONGKHOI = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','TONG_KHOI','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDNL_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','PVN','TY_TRONG_CASA')
+    let TY_TRONG_CASA_KHDNL_Non_PVN = await dailyServices.getDataHDVDaily(Rptdate,'KHDNL','Non-PVN','TY_TRONG_CASA')
+
+    //QUY_MO_TIN_DUNG_DH
+    let QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','QUY_MO_TIN_DUNG')
+
+    //QUY_MO_TIN_DUNG_TDH
+    let QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','QUY_MO_TIN_DUNG')
+    let QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','QUY_MO_TIN_DUNG')
+
+    //LAI_SUAT_TIN_DUNG_DH
+    let LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TOAN_HANG','TOAN_HANG','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','NH','TOAN_HANG','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_NH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Core','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_NH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','NH','Upper','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','NH','Non-PVN','LAI_SUAT_TIN_DUNG')
+    
+    //LAI_SUAT_TIN_DUNG_TDH
+    let LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG = await dailyServices.getDataTDDaily(Rptdate,'TOAN_HANG','TDH','TOAN_HANG','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHCN','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_TDH_Core = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Core','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper = await dailyServices.getDataTDDaily(Rptdate,'KHDN','TDH','Upper','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
+    let LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','LAI_SUAT_TIN_DUNG')
+    
+    //Customer
+    let TOP_CANHAN_TANG = await dailyServices.getCustomerTDDailyCNTang(Rptdate)
+    let TOP_CANHAN_GIAM = await dailyServices.getCustomerTDDailyCNGiam(Rptdate)
+    let TOP_DOANHNGHIEP_TANG = await dailyServices.getCustomerTDDailyTCDNTang(Rptdate)
+    let TOP_DOANHNGHIEP_GIAM = await dailyServices.getCustomerTDDailyTCDNGiam(Rptdate)
+    
     
 
     return res.render('report_daily_table',{
+        
         pageTitle: 'Báo cáo ngày',
+        titles: titles,
         staff:staff,
         date: date,
         QUY_MO_KKH_TOANHANG_TOANHANG :  QUY_MO_KKH_TOANHANG_TOANHANG,    
@@ -283,6 +454,7 @@ const reportDailyTableSelect = async (req,res) => {
         LAI_SUAT_CKH_KHDNL_PVN :  LAI_SUAT_CKH_KHDNL_PVN,
         LAI_SUAT_CKH_KHDNL_Non_PVN :  LAI_SUAT_CKH_KHDNL_Non_PVN,
 
+        BIEN_DO_CONG_TOANHANG_TOANHANG: BIEN_DO_CONG_TOANHANG_TOANHANG,
         BIEN_DO_CONG_KHCN_TONGKHOI:BIEN_DO_CONG_KHCN_TONGKHOI,
         BIEN_DO_CONG_KHCN_6M:BIEN_DO_CONG_KHCN_6M,
         BIEN_DO_CONG_KHCN_6M9M: BIEN_DO_CONG_KHCN_6M9M,
@@ -294,6 +466,8 @@ const reportDailyTableSelect = async (req,res) => {
         BIEN_DO_CONG_KHDNL_TONGKHOI : BIEN_DO_CONG_KHDNL_TONGKHOI,
         BIEN_DO_CONG_KHDNL_PVN : BIEN_DO_CONG_KHDNL_PVN,
         BIEN_DO_CONG_KHDNL_Non_PVN : BIEN_DO_CONG_KHDNL_Non_PVN,
+
+        SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG:SO_DU_BIEN_DO_CONG_TOANHANG_TOANHANG,
         SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI : SO_DU_BIEN_DO_CONG_KHCN_TONGKHOI,
         SO_DU_BIEN_DO_CONG_KHCN_6M : SO_DU_BIEN_DO_CONG_KHCN_6M,
         SO_DU_BIEN_DO_CONG_KHCN_6M9M : SO_DU_BIEN_DO_CONG_KHCN_6M9M,
@@ -304,8 +478,55 @@ const reportDailyTableSelect = async (req,res) => {
         SO_DU_BIEN_DO_CONG_KHDN_Upper : SO_DU_BIEN_DO_CONG_KHDN_Upper,
         SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI : SO_DU_BIEN_DO_CONG_KHDNL_TONGKHOI,
         SO_DU_BIEN_DO_CONG_KHDNL_PVN : SO_DU_BIEN_DO_CONG_KHDNL_PVN,
-        SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN : SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN
+        SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN : SO_DU_BIEN_DO_CONG_KHDNL_Non_PVN,
+
+        TY_TRONG_CASA_TOANHANG_TOANHANG : TY_TRONG_CASA_TOANHANG_TOANHANG,
+        TY_TRONG_CASA_KHCN_TONGKHOI : TY_TRONG_CASA_KHCN_TONGKHOI,
+        TY_TRONG_CASA_KHDN_TONGKHOI : TY_TRONG_CASA_KHDN_TONGKHOI,
+        TY_TRONG_CASA_KHDN_Core : TY_TRONG_CASA_KHDN_Core,
+        TY_TRONG_CASA_KHDN_Upper : TY_TRONG_CASA_KHDN_Upper,
+        TY_TRONG_CASA_KHDNL_TONGKHOI : TY_TRONG_CASA_KHDNL_TONGKHOI,
+        TY_TRONG_CASA_KHDNL_PVN : TY_TRONG_CASA_KHDNL_PVN,
+        TY_TRONG_CASA_KHDNL_Non_PVN : TY_TRONG_CASA_KHDNL_Non_PVN,
+
+        QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG,
+        QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG,
+        QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDN_NH_Core : QUY_MO_TIN_DUNG_KHDN_NH_Core,
+        QUY_MO_TIN_DUNG_KHDN_NH_Upper : QUY_MO_TIN_DUNG_KHDN_NH_Upper,
+        QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI : QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN : QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN,
+
+        QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG : QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG,
+        QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDN_TDH_Core : QUY_MO_TIN_DUNG_KHDN_TDH_Core,
+        QUY_MO_TIN_DUNG_KHDN_TDH_Upper : QUY_MO_TIN_DUNG_KHDN_TDH_Upper,
+        QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI : QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI,
+        QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN : QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN,
+
+        LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG,
+        LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG,
+        LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDN_NH_Core : LAI_SUAT_TIN_DUNG_KHDN_NH_Core,
+        LAI_SUAT_TIN_DUNG_KHDN_NH_Upper : LAI_SUAT_TIN_DUNG_KHDN_NH_Upper,
+        LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN : LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN,
+
+        LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG : LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG,
+        LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_Core : LAI_SUAT_TIN_DUNG_KHDN_TDH_Core,
+        LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper : LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper,
+        LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI : LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI,
+        LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN : LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN,
         
+        TOP_CANHAN_TANG: TOP_CANHAN_TANG,
+        TOP_CANHAN_GIAM: TOP_CANHAN_GIAM,
+        TOP_DOANHNGHIEP_TANG : TOP_DOANHNGHIEP_TANG,
+        TOP_DOANHNGHIEP_GIAM : TOP_DOANHNGHIEP_GIAM,
     })
 }
 

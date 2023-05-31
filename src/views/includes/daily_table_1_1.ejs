@@ -1,12 +1,12 @@
 <div class="daily_table_1_1">
 <div class="row">
     <div class="col-12 row_1">
-        <p>QUY MÔ HĐV</p>
+        <p><%= title %></p>
     </div>
 </div>
 <div class="row">
     <div class="col-12 row_2">
-        <p>9999999</p>
+        <p><%= current %></p>
     </div>
 </div>
 <div class="row ">
@@ -14,8 +14,8 @@
         <div style="background-color: rgb(129, 205, 243); padding: 0 10px ; border-bottom: 1px solid rgb(222, 222, 222);">
             <div class="row row_3">
                 <div class="col-4"><p>DTD</p></div>
-                <div class="col-4"><i class="fa-solid fa-caret-down" style="color: #ae1920;"></i></div>
-                <div class="col-4">3</div>
+                <div style="line-height: 36px;" class="col-2"><i class="<%= (Dtd_value>0) ? 'fa-solid fa-caret-up green' : 'fa-solid fa-caret-down red' %>"></i></div>
+                <div style="line-height: 36px;" class="col-6"><%= Dtd %></div>
             </div>
         </div>
     </div>
@@ -24,9 +24,9 @@
     <div class="col-12">
         <div style="background-color: rgb(129, 205, 243); padding: 0 10px ; border-bottom: 1px solid rgb(222, 222, 222);">
             <div class="row row_3">
-                <div class="col-4"><p>DTD</p></div>
-                <div class="col-4"><i class="fa-solid fa-caret-down" style="color: #ae1920;"></i></div>
-                <div class="col-4">3</div>
+                <div class="col-4"><p>MTD</p></div>
+                <div style="line-height: 36px;" class="col-2"><i class="<%= (Mtd_value>0) ? 'fa-solid fa-caret-up green' : 'fa-solid fa-caret-down red' %>"></i></div>
+                <div style="line-height: 36px;" class="col-6"><%= Mtd %></div>
             </div>
         </div>
     </div>
@@ -35,9 +35,9 @@
     <div class="col-12">
         <div style="background-color: rgb(129, 205, 243); padding: 0 10px ;">
             <div class="row row_3">
-                <div class="col-4"><p>DTD</p></div>
-                <div class="col-4"><i class="fa-solid fa-caret-down" style="color: #ae1920;"></i></div>
-                <div class="col-4">3</div>
+                <div class="col-4"><p>YTD</p></div>
+                <div style="line-height: 36px;" class="col-2"><i class="<%= (Ytd_value>0) ? 'fa-solid fa-caret-up green' : 'fa-solid fa-caret-down red' %>"></i></div>
+                <div style="line-height: 36px;" class="col-6"><%= Ytd %></div>
             </div>
         </div>
     </div>

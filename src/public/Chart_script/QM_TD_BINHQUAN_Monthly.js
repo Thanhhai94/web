@@ -12,8 +12,6 @@ Highcharts.chart('CHART_1', {
     },
     xAxis: {
       categories: ['KHCN-CN', 'KHDN-Core', 'KHDN-Upper', 'KHDNL - Non-PVN', 'Toàn hàng'],
-      lineWidth: 0,
-      gridLineWidth: 0,  
     },
     yAxis: {
       gridLineWidth: 0,

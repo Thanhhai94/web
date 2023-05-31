@@ -18,11 +18,14 @@ Highcharts.chart('chart_2', {
     },
     xAxis: [{
       categories: input_month,
-      crosshair: true
+      crosshair: true,
+      // 
     }],
     yAxis: [
-    { // Primary yAxis
+    {
+      gridLineWidth: 0, 
       labels: {
+        enabled: false,
         format: '',
         style: {
           color: Highcharts.getOptions().colors[1]
