@@ -133,11 +133,22 @@ const reportDailyTable = async (req,res) => {
     let LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','LAI_SUAT_TIN_DUNG')
     
 
-    //Customer
+    //Customer_TD
     let TOP_CANHAN_TANG = await dailyServices.getCustomerTDDailyCNTang(Rptdate)
     let TOP_CANHAN_GIAM = await dailyServices.getCustomerTDDailyCNGiam(Rptdate)
     let TOP_DOANHNGHIEP_TANG = await dailyServices.getCustomerTDDailyTCDNTang(Rptdate)
     let TOP_DOANHNGHIEP_GIAM = await dailyServices.getCustomerTDDailyTCDNGiam(Rptdate)
+
+    //Customer_HDV
+    let TOP_CKH_KHCN_ASC = await dailyServices.getCostumerAsc(Rptdate,'CKH','CN')
+    let TOP_CKH_KHCN_DESC = await dailyServices.getCostumerDesc(Rptdate,'CKH','CN')
+    let TOP_CKH_KHDN_ASC = await dailyServices.getCostumerAsc(Rptdate,'CKH','DN')
+    let TOP_CKH_KHDN_DESC = await dailyServices.getCostumerDesc(Rptdate,'CKH','DN')
+    let TOP_KKH_KHCN_ASC = await dailyServices.getCostumerAsc(Rptdate,'KKH','CN')
+    let TOP_KKH_KHCN_DESC = await dailyServices.getCostumerDesc(Rptdate,'KKH','CN')
+    let TOP_KKH_KHDN_ASC = await dailyServices.getCostumerAsc(Rptdate,'KKH','DN')
+    let TOP_KKH_KHDN_DESC = await dailyServices.getCostumerDesc(Rptdate,'KKH','DN')
+
     
     
 
@@ -264,6 +275,15 @@ const reportDailyTable = async (req,res) => {
         TOP_CANHAN_GIAM: TOP_CANHAN_GIAM,
         TOP_DOANHNGHIEP_TANG : TOP_DOANHNGHIEP_TANG,
         TOP_DOANHNGHIEP_GIAM : TOP_DOANHNGHIEP_GIAM,
+
+        TOP_CKH_KHCN_ASC : TOP_CKH_KHCN_ASC,
+        TOP_CKH_KHCN_DESC : TOP_CKH_KHCN_DESC,
+        TOP_CKH_KHDN_ASC : TOP_CKH_KHDN_ASC,
+        TOP_CKH_KHDN_DESC : TOP_CKH_KHDN_DESC,
+        TOP_KKH_KHCN_ASC : TOP_KKH_KHCN_ASC,
+        TOP_KKH_KHCN_DESC : TOP_KKH_KHCN_DESC,
+        TOP_KKH_KHDN_ASC : TOP_KKH_KHDN_ASC,
+        TOP_KKH_KHDN_DESC : TOP_KKH_KHDN_DESC,
     })
 }
 
@@ -398,13 +418,21 @@ const reportDailyTableSelect = async (req,res) => {
     let LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','TONG_KHOI','LAI_SUAT_TIN_DUNG')
     let LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN = await dailyServices.getDataTDDaily(Rptdate,'KHDNL','TDH','Non-PVN','LAI_SUAT_TIN_DUNG')
     
-    //Customer
+    //Customer_TD
     let TOP_CANHAN_TANG = await dailyServices.getCustomerTDDailyCNTang(Rptdate)
     let TOP_CANHAN_GIAM = await dailyServices.getCustomerTDDailyCNGiam(Rptdate)
     let TOP_DOANHNGHIEP_TANG = await dailyServices.getCustomerTDDailyTCDNTang(Rptdate)
     let TOP_DOANHNGHIEP_GIAM = await dailyServices.getCustomerTDDailyTCDNGiam(Rptdate)
-    
-    
+
+    //Customer_HDV
+    let TOP_CKH_KHCN_ASC = await dailyServices.getCostumerAsc(Rptdate,'CKH','CN')
+    let TOP_CKH_KHCN_DESC = await dailyServices.getCostumerDesc(Rptdate,'CKH','CN')
+    let TOP_CKH_KHDN_ASC = await dailyServices.getCostumerAsc(Rptdate,'CKH','DN')
+    let TOP_CKH_KHDN_DESC = await dailyServices.getCostumerDesc(Rptdate,'CKH','DN')
+    let TOP_KKH_KHCN_ASC = await dailyServices.getCostumerAsc(Rptdate,'KKH','CN')
+    let TOP_KKH_KHCN_DESC = await dailyServices.getCostumerDesc(Rptdate,'KKH','CN')
+    let TOP_KKH_KHDN_ASC = await dailyServices.getCostumerAsc(Rptdate,'KKH','DN')
+    let TOP_KKH_KHDN_DESC = await dailyServices.getCostumerDesc(Rptdate,'KKH','DN')
 
     return res.render('report_daily_table',{
         
@@ -527,6 +555,15 @@ const reportDailyTableSelect = async (req,res) => {
         TOP_CANHAN_GIAM: TOP_CANHAN_GIAM,
         TOP_DOANHNGHIEP_TANG : TOP_DOANHNGHIEP_TANG,
         TOP_DOANHNGHIEP_GIAM : TOP_DOANHNGHIEP_GIAM,
+
+        TOP_CKH_KHCN_ASC : TOP_CKH_KHCN_ASC,
+        TOP_CKH_KHCN_DESC : TOP_CKH_KHCN_DESC,
+        TOP_CKH_KHDN_ASC : TOP_CKH_KHDN_ASC,
+        TOP_CKH_KHDN_DESC : TOP_CKH_KHDN_DESC,
+        TOP_KKH_KHCN_ASC : TOP_KKH_KHCN_ASC,
+        TOP_KKH_KHCN_DESC : TOP_KKH_KHCN_DESC,
+        TOP_KKH_KHDN_ASC : TOP_KKH_KHDN_ASC,
+        TOP_KKH_KHDN_DESC : TOP_KKH_KHDN_DESC,
     })
 }
 

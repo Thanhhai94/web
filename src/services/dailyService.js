@@ -1,3 +1,4 @@
+import { syncTimeout } from "highcharts"
 import db from "../models/index"
 const { Op } = require("sequelize")
 
@@ -70,7 +71,9 @@ const getCustomerTDDailyCNTang = async(Rptdate) => {
         const KQ = await db.Report_TD_Customer_Daily.findAll({
             where: {
                 Rptdate: Rptdate,
-                NOTE: 'PS_TANG',
+                NOTE: {
+                    [Op.in]: ['PS_TANG','PS_MOI']
+                  },
                 KHOI_QL: 'KHCN',
             },
             order: [['DIFF', 'DESC']]
@@ -115,7 +118,9 @@ const getCustomerTDDailyTCDNTang = async(Rptdate) => {
         const KQ = await db.Report_TD_Customer_Daily.findAll({
             where: {
                 Rptdate: Rptdate,
-                NOTE: 'PS_TANG',
+                NOTE: {
+                    [Op.in]: ['PS_TANG','PS_MOI']
+                  },
                 KHOI_QL: {
                     [Op.in]: ['KHDN','KHDNL']
                   }
@@ -158,6 +163,49 @@ const getCustomerTDDailyTCDNGiam = async(Rptdate) => {
     }
 }
 
+const getCostumerAsc = async (Rptdate, KY_HAN, KHOI_QL) => {
+    try {
+        const KQ = await db.Report_HDV_Customer_Daily.findAll({
+            where : {
+                Rptdate: Rptdate,
+                KY_HAN: KY_HAN,
+                KHOI_QL: KHOI_QL
+            },
+            order: [['DIFF', 'ASC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+       console.log(error) 
+    }
+}
+
+const getCostumerDesc = async (Rptdate, KY_HAN, KHOI_QL) => {
+    try {
+        const KQ = await db.Report_HDV_Customer_Daily.findAll({
+            where : {
+                Rptdate: Rptdate,
+                KY_HAN: KY_HAN,
+                KHOI_QL: KHOI_QL
+            },
+            order: [['DIFF', 'DESC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+       console.log(error) 
+    }
+}
 
 
 
@@ -167,5 +215,7 @@ module.exports = {
     getCustomerTDDailyCNTang: getCustomerTDDailyCNTang,
     getCustomerTDDailyCNGiam: getCustomerTDDailyCNGiam,
     getCustomerTDDailyTCDNTang: getCustomerTDDailyTCDNTang,
-    getCustomerTDDailyTCDNGiam:getCustomerTDDailyTCDNGiam
+    getCustomerTDDailyTCDNGiam:getCustomerTDDailyTCDNGiam,
+    getCostumerAsc: getCostumerAsc,
+    getCostumerDesc : getCostumerDesc
 }
