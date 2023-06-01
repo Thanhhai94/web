@@ -49,3 +49,11 @@
   background-color: #bb8e09;
   font-weight: bold;
 }
+
+.error {
+  color: red;
+}
+
+.success{
+  color: green;
+}

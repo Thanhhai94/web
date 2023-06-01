@@ -2,12 +2,12 @@
         <div class="col-lg-2">
                 <%- include('daily_table_1_1.ejs',{
                         title: titles[0], 
-                        current: (QUY_MO_KKH_TOANHANG_TOANHANG[0].Amt=='') ? '' : parseInt(QUY_MO_KKH_TOANHANG_TOANHANG[0].Amt + QUY_MO_CKH_TOANHANG_TOANHANG[0].Amt ).toLocaleString("en-US"), 
-                        Dtd: (QUY_MO_KKH_TOANHANG_TOANHANG[0].Dtd=='') ? '' : parseInt(QUY_MO_KKH_TOANHANG_TOANHANG[0].Dtd + QUY_MO_CKH_TOANHANG_TOANHANG[0].Dtd ).toLocaleString("en-US"),
+                        current: (QUY_MO_KKH_TOANHANG_TOANHANG[0].Amt=='') ? '' : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG[0].Amt + QUY_MO_CKH_TOANHANG_TOANHANG[0].Amt ).toLocaleString("en-US"), 
+                        Dtd: (QUY_MO_KKH_TOANHANG_TOANHANG[0].Dtd=='') ? '' : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG[0].Dtd + QUY_MO_CKH_TOANHANG_TOANHANG[0].Dtd ).toLocaleString("en-US"),
                         Dtd_value: QUY_MO_KKH_TOANHANG_TOANHANG[0].Dtd + QUY_MO_CKH_TOANHANG_TOANHANG[0].Dtd,
-                        Mtd: (QUY_MO_KKH_TOANHANG_TOANHANG[0].Mtd=='') ? '' : parseInt(QUY_MO_KKH_TOANHANG_TOANHANG[0].Mtd + QUY_MO_CKH_TOANHANG_TOANHANG[0].Mtd ).toLocaleString("en-US"),
+                        Mtd: (QUY_MO_KKH_TOANHANG_TOANHANG[0].Mtd=='') ? '' : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG[0].Mtd + QUY_MO_CKH_TOANHANG_TOANHANG[0].Mtd ).toLocaleString("en-US"),
                         Mtd_value: QUY_MO_KKH_TOANHANG_TOANHANG[0].Mtd + QUY_MO_CKH_TOANHANG_TOANHANG[0].Mtd,
-                        Ytd: (QUY_MO_KKH_TOANHANG_TOANHANG[0].Ytd=='') ? '' : parseInt(QUY_MO_KKH_TOANHANG_TOANHANG[0].Ytd + QUY_MO_CKH_TOANHANG_TOANHANG[0].Ytd ).toLocaleString("en-US"),
+                        Ytd: (QUY_MO_KKH_TOANHANG_TOANHANG[0].Ytd=='') ? '' : Math.round(QUY_MO_KKH_TOANHANG_TOANHANG[0].Ytd + QUY_MO_CKH_TOANHANG_TOANHANG[0].Ytd ).toLocaleString("en-US"),
                         Ytd_value: QUY_MO_KKH_TOANHANG_TOANHANG[0].Ytd + QUY_MO_CKH_TOANHANG_TOANHANG[0].Ytd
                 }) %>
         </div>
@@ -50,12 +50,12 @@
         <div class="col-lg-2">
                 <%- include('daily_table_1_2.ejs',{
                         title:titles[4], 
-                        current: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt=='') ? '' : parseInt( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt ).toLocaleString("en-US"), 
-                        Dtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd ).toLocaleString("en-US"),
+                        current: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt=='') ? '' : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt ).toLocaleString("en-US"), 
+                        Dtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd ).toLocaleString("en-US"),
                         Dtd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd,
-                        Mtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd ).toLocaleString("en-US"),
+                        Mtd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd ).toLocaleString("en-US"),
                         Mtd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd ,
-                        Ytd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd ).toLocaleString("en-US"),
+                        Ytd: ( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd ).toLocaleString("en-US"),
                         Ytd_value:  QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd
                 }) %>
         </div>

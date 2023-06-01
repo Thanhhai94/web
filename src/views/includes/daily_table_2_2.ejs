@@ -16,10 +16,10 @@
     </tr>
     <tr style="background-color: rgb(25, 104, 25);color: #fff;font-weight: bold;">
         <td colspan="2">Toàn hàng</td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd >0) ? 'white' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt >0) ? 'white' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd >0) ? 'white' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd >0) ? 'white' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TOANHANG_TOANHANG[0].Mtd*100).toFixed(2)} %` %></td>
@@ -27,10 +27,10 @@
     </tr>
     <tr style="background-color: rgb(129, 205, 243); font-weight: bold;">
         <td colspan="2"style="text-align: left;">Ngắn hạn</td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Amt=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Dtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Mtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Ytd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_NH_TOANHANG[0].Mtd*100).toFixed(2)} %` %></td>
@@ -38,10 +38,10 @@
     </tr>
     <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
         <td colspan="2">KHCN</td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Amt=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Dtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Mtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Ytd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHCN_NH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHCN_NH_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
@@ -49,10 +49,10 @@
     </tr>
     <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
         <td colspan="2">KHDN</td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Amt=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Dtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Mtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Ytd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_NH_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
@@ -60,10 +60,10 @@
     </tr>
     <tr style="font-style: italic;">
         <td colspan="2">Core</td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Amt=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Dtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Mtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Ytd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_Core[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Core[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Core[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_NH_Core[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Core[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Core[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_NH_Core[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Core[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Core[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_NH_Core[0].Mtd*100).toFixed(2)} %` %></td>
@@ -71,10 +71,10 @@
     </tr>
     <tr style="font-style: italic;">
         <td colspan="2">Upper</td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Amt=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Dtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Mtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Ytd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDN_NH_Upper[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Upper[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Upper[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_NH_Upper[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Upper[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Upper[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_NH_Upper[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Upper[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_NH_Upper[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_NH_Upper[0].Mtd*100).toFixed(2)} %` %></td>
@@ -82,10 +82,10 @@
     </tr>
     <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
         <td colspan="2">KHDNL</td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Amt=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Dtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Mtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Ytd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_NH_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
@@ -96,10 +96,10 @@
     </tr>
     <tr style="font-style: italic;">
         <td colspan="2">Non-PVN</td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Amt=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Dtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Mtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Ytd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_KHDNL_NH_Non_PVN[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_NH_Non_PVN[0].Mtd*100).toFixed(2)} %` %></td>
@@ -107,10 +107,10 @@
     </tr>
     <tr style="background-color: rgb(129, 205, 243); font-weight: 800;">
         <td colspan="2" style="text-align: left;">Trung/dài hạn</td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Amt=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Dtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Mtd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Ytd=='') ? '' : parseInt(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Amt >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Amt=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Dtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Dtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Mtd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Mtd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Ytd >0) ? 'green' : 'red' %>"><%= (QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Ytd=='') ? '' : Math.round(QUY_MO_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_TOANHANG_TDH_TOANHANG[0].Mtd*100).toFixed(2)} %` %></td>
@@ -118,10 +118,10 @@
     </tr>
     <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
         <td colspan="2">KHCN</td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Amt=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Dtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Mtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Ytd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Amt=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Dtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Mtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Ytd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHCN_TDH_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
@@ -129,10 +129,10 @@
     </tr>
     <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
         <td colspan="2">KHDN</td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Amt=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Dtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Mtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Ytd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Amt=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Dtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Mtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Ytd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
@@ -140,10 +140,10 @@
     </tr>
     <tr style="font-style: italic;">
         <td colspan="2">Core</td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Amt=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Dtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Mtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Ytd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Amt=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Dtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Mtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Ytd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_Core[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Core[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Core[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_Core[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Core[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Core[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_Core[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Core[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Core[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_Core[0].Mtd*100).toFixed(2)} %` %></td>
@@ -151,10 +151,10 @@
     </tr>
     <tr style="font-style: italic;">
         <td colspan="2">Upper</td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Amt=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Dtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Mtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Ytd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Amt=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Dtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Mtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Ytd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDN_TDH_Upper[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDN_TDH_Upper[0].Mtd*100).toFixed(2)} %` %></td>
@@ -168,10 +168,10 @@
     </tr>
     <tr style="background-color: rgb(241, 222, 159);font-weight: bold;">
         <td colspan="2">KHDNL</td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Amt=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Dtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Mtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Ytd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Amt=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Dtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Mtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Ytd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_TDH_TONGKHOI[0].Mtd*100).toFixed(2)} %` %></td>
@@ -182,10 +182,10 @@
     </tr>
     <tr style="font-style: italic;">
         <td colspan="2">Non-PVN</td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Amt=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Amt).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Dtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Dtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Mtd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Mtd).toLocaleString("en-US") %></td>
-        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Ytd=='') ? '' : parseInt( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Ytd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Amt=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Amt).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Dtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Dtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Dtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Mtd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Mtd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Mtd).toLocaleString("en-US") %></td>
+        <td class="<%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Ytd >0) ? 'green' : 'red' %>"><%= ( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Ytd=='') ? '' : Math.round( QUY_MO_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Ytd).toLocaleString("en-US") %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Amt >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Amt == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Amt*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Dtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Dtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Dtd*100).toFixed(2)} %` %></td>
         <td class="<%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Mtd >0) ? 'green' : 'red' %>"><%= (LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Mtd == '') ? '' : `${(LAI_SUAT_TIN_DUNG_KHDNL_TDH_Non_PVN[0].Mtd*100).toFixed(2)} %` %></td>

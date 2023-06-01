@@ -1,4 +1,6 @@
 import UserServices from "../services/UserService";
+import staffServices from "../services/StaffService";
+
 
 const getLogin = async (req,res) => {
   console.log(req.session.CIF);
@@ -29,8 +31,33 @@ const logout = (req, res) => {
   })
 }
 
+const getChangePassword = async (req,res) => {
+  let CIF = req.session.CIF
+  let staff = await staffServices.getStaffInfo(CIF);
+  let user = await UserServices.getUserByCif(CIF)
+  console.log(user)
+  res.render('password', {
+    pageTitle: 'Đổi mật khẩu',
+    staff: staff,
+    user: user
+  })
+}
+
+const postChangePassword = async (req,res) => {
+  let data = req.body
+  console.log('data',data)
+  let CIF = req.session.CIF;
+  let user = await UserServices.updatePassword(CIF,data)
+  console.log('user',user)
+  if(user) {
+    return res.redirect('/homepage')
+  }
+}
+
 module.exports = {
   getLogin: getLogin,
   loginPost: loginPost,
-  logout: logout
+  logout: logout,
+  getChangePassword:getChangePassword,
+  postChangePassword:postChangePassword
 };

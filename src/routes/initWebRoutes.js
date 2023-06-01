@@ -15,6 +15,10 @@ const initWebRoutes = (app) => {
   router.get("/login", userController.getLogin);
   router.post("/login",userController.loginPost);
   router.get("/logout", userController.logout);
+
+  router.get("/doimatkhau", userController.getChangePassword)
+  router.post("/doimatkhau", userController.postChangePassword)
+
   router.get("/jobs", jobController.getListJob);
   router.get("/homepage",staffController.getStaffInfo)
   router.get("/DSnhansu",staffController.getListStaff)
