@@ -11,7 +11,7 @@ import test from '../controller/test'
 let router = express.Router();
 
 const initWebRoutes = (app) => {
-  // router.get("/", staffController.getListStaff);
+  router.get("/", (req,res) => {res.redirect("/login")});
   router.get("/login", userController.getLogin);
   router.post("/login",userController.loginPost);
   router.get("/logout", userController.logout);
