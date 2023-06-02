@@ -37,19 +37,19 @@
 .daily_table_1_1 .row_3 {
     height: 36px;
 }
-.daily_table_1_1 .row_3 .col-4{
+.daily_table_1_1 .row_3 .col-lg-3{
     line-height: 36px;
     text-align: center;
 }
-.daily_table_1_1 .row_3 .col-2{
+.daily_table_1_1 .row_3 .col-lg-1{
     line-height: 36px;
     text-align: center;
 }
-.daily_table_1_1 .row_3 .col-6{
+.daily_table_1_1 .row_3 .col-lg-8{
     line-height: 36px;
     text-align: center;
 }
 
 .daily_table_1_1 .row_3 p{
-    font-size: 14px;
+    
 }

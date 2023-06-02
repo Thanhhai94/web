@@ -1,18 +1,18 @@
-.title_report_Daily {
+.daily_dashboard_HDV_title {
     border-bottom: 2px solid var(--color-bl);
     margin-bottom: 10px;
 }
 
-.title_report_Daily .col-7 {
+.daily_dashboard_HDV_title .col-7 {
     text-align: center;
 }
-.title_report_Daily .col-2 p {
+.daily_dashboard_HDV_title .col-2 p {
     float: right;
     font-weight: bold;
     color: var(--color-bl);
 
 }
 
-.title_report_Daily .col-1 input {
+.daily_dashboard_HDV_title .col-1 input {
     text-align: center;
 }

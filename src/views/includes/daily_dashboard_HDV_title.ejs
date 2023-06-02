@@ -1,6 +1,6 @@
-<div class="row title_report_Daily" >
+<div class="row daily_dashboard_HDV_title" >
     <div class="col-7">
-        <h4>BÁO CÁO TÌNH HÌNH HOẠT ĐỘNG HĐV - TD</h4>
+        <h4 style="float: left;"><%= `BÁO CÁO HUY ĐỘNG VỐN ${dateFormat}` %></h4>
     </div>
     <div class="col-2">
         <p>Ngày báo cáo</p>
@@ -16,7 +16,7 @@
            console.log($(this).val())
            let date = $(this).val()
         //    let param = date.replaceAll('-','')
-           window.location.href = `/daily/${date}`
+           window.location.href = `/daily/dashboard/hdv/${date}/TOAN_HANG`
         })
     })
 </script>
